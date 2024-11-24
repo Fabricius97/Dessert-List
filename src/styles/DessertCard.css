@@ -1,0 +1,53 @@
+.DessertCardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 950px;
+  margin: 40px 0;
+}
+
+.dessertCard {
+  display: flex;
+}
+
+.dessert {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+}
+
+.dessert-text {
+  display: flex;
+  flex-direction: column;
+  width: -webkit-fill-available;
+  padding-top: 20px;
+  gap: 15px;
+}
+
+.dessertImg {
+  border: 1px solid transparent;
+}
+
+.dessertImg.active {
+  border-color: hsl(14, 86%, 42%); /* Den nya färgen för aktiv bild */
+}
+
+@media (max-width: 1625px) {
+  .DessertCardContainer {
+    max-width: 625px;
+  }
+}
+
+@media (max-width: 663px) {
+  .DessertCardContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 400px) {
+  .dessertImg {
+    width: 200px;
+  }
+}
