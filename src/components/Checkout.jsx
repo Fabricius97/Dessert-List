@@ -4,7 +4,7 @@ import CheckoutCard from "./CheckoutCard";
 import CarbonNeutral from "../../assets/images/icon-carbon-neutral.svg";
 import EmptyCart from "../../assets/images/illustration-empty-cart.svg";
 
-const Checkout = ({ cart, removeItem }) => {
+const Checkout = ({ cart, removeItem, onConfirmOrder }) => {
   const cartItems = Object.values(cart);
   const totalAmount = cartItems.reduce(
     (total, item) => total + item.quantity * item.price,
@@ -50,7 +50,12 @@ const Checkout = ({ cart, removeItem }) => {
             delivery.
           </div>
           <div className="confirOrderButton">
-            <button className="confirmOrder">Confirm Order</button>
+            <button
+              className="confirmOrder"
+              onClick={onConfirmOrder} // Lägg till callback för att visa popup
+            >
+              Confirm Order
+            </button>
           </div>
         </>
       )}

@@ -6,7 +6,6 @@
   padding: 30px 30px 0 30px;
   background-color: hsl(20, 50%, 98%);
   height: fit-content;
-<<<<<<< HEAD
   display: flex;
   flex-direction: column;
 }
@@ -18,8 +17,6 @@
   justify-content: center;
   text-align: center;
   padding-bottom: 40px;
-=======
->>>>>>> 88f3cd48fa25c4a4927f3ae677849b2dac7a026e
 }
 
 .orderTotal {
@@ -50,6 +47,7 @@
   font-family: "Red Hat Text", sans-serif;
   margin: 30px 0;
   font-weight: 600;
+  cursor: pointer;
 }
 
 @media (max-width: 1304px) {

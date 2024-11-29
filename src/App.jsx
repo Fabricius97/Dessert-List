@@ -2,10 +2,12 @@ import "./App.css";
 import React, { useState } from "react";
 import DessertCard from "./components/DessertCard";
 import Checkout from "./components/Checkout";
-import data from "../data.json"; // Antag att data.json innehåller listan med dessertobjekt.
+import ConfirmedCheckout from "./components/ConfirmedCheckout";
+import data from "../data.json";
 
 const App = () => {
-  const [cart, setCart] = useState({}); // Varukorgen
+  const [cart, setCart] = useState({});
+  const [isConfirmed, setIsConfirmed] = useState(false); // Hanterar popupens synlighet
 
   // Lägg till en produkt i varukorgen
   const handleAddToCart = (dessert, newQuantity) => {
@@ -36,14 +38,28 @@ const App = () => {
     });
   };
 
+  // Bekräfta beställning och visa popup
+  const handleConfirmOrder = () => {
+    setIsConfirmed(true);
+  };
+
+  // Stäng popup och töm varukorgen
+  const handleStartNewOrder = () => {
+    setCart({});
+    setIsConfirmed(false);
+  };
+
   return (
     <div className="App">
-      <DessertCard
-        onAddToCart={handleAddToCart}
+      {isConfirmed && (
+        <ConfirmedCheckout cart={cart} onClose={handleStartNewOrder} />
+      )}
+      <DessertCard onAddToCart={handleAddToCart} cart={cart} desserts={data} />
+      <Checkout
         cart={cart}
-        desserts={data} // Skicka listan av desserter till DessertCard
+        removeItem={handleRemoveFromCart}
+        onConfirmOrder={handleConfirmOrder} // Lägg till en callback
       />
-      <Checkout cart={cart} removeItem={handleRemoveFromCart} />
     </div>
   );
 };
