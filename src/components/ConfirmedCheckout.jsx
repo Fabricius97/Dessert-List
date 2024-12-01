@@ -9,7 +9,7 @@ const ConfirmedCheckout = ({ cart, onClose }) => {
       <div className="popupContent">
         <img src={ConfirmedCheckoutImg} alt="confirmedcheckoutimg" />
         <h1>Order Confirmed</h1>
-        <p>We hope you enjoy your food!</p>
+        <p style={{ margin: "10px 0" }}>We hope you enjoy your food!</p>
         <div className="checkoutitems">
           {Object.values(cart).map((item) => (
             <CheckoutCard
@@ -21,6 +21,7 @@ const ConfirmedCheckout = ({ cart, onClose }) => {
               onRemove={null}
             />
           ))}
+          {/* Här ska total order också finnas */}
         </div>
         <button className="startNewOrder" onClick={onClose}>
           Start New Order

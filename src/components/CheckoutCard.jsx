@@ -26,7 +26,7 @@ const CheckoutCard = ({ id, name, quantity, price, onRemove }) => {
               style={{ cursor: "pointer" }}
             />
           </div>
-          <hr style={{ marginTop: "30px" }} />
+          <hr style={{ margin: "20px 0" }} />
         </li>
       </ul>
     </div>
