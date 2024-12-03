@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/ConfirmedCheckout.css";
-import ConfirmedCheckoutImg from "../../assets/images/icon-order-confirmed.svg";
+import ConfirmedCheckoutImg from "../../public/images/icon-order-confirmed.svg";
 
 const ConfirmedCheckout = ({ cart, onClose }) => {
   const cartItems = Object.values(cart);

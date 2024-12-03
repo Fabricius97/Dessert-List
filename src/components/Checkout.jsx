@@ -1,8 +1,8 @@
 import React from "react";
 import "../styles/Checkout.css";
 import CheckoutCard from "./CheckoutCard";
-import CarbonNeutral from "../../assets/images/icon-carbon-neutral.svg";
-import EmptyCart from "../../assets/images/illustration-empty-cart.svg";
+import CarbonNeutral from "/public/images/icon-carbon-neutral.svg";
+import EmptyCart from "/public/images/illustration-empty-cart.svg";
 
 const Checkout = ({ cart, removeItem, onConfirmOrder }) => {
   const cartItems = Object.values(cart);

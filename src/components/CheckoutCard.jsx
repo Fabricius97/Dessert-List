@@ -1,5 +1,5 @@
 import React from "react";
-import deleteImg from "../../assets/images/icon-remove-item.svg";
+import deleteImg from "/public/images/icon-remove-item.svg";
 import "../styles/CheckoutCard.css";
 
 const CheckoutCard = ({ id, name, quantity, price, onRemove }) => {

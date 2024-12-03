@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import AddToCartImg from "../../assets/images/icon-add-to-cart.svg";
-import PlusIcon from "../../assets/images/icon-increment-quantity.svg";
-import MinusIcon from "../../assets/images/icon-decrement-quantity.svg";
+import AddToCartImg from "../../public/images/icon-add-to-cart.svg";
+import PlusIcon from "../../public/images/icon-increment-quantity.svg";
+import MinusIcon from "../../public/images/icon-decrement-quantity.svg";
 import "../styles/AddToCartButton.css";
 
 const AddToCartButton = ({ dessert, onAddToCart, currentCount }) => {
