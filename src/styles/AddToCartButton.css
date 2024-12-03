@@ -22,7 +22,9 @@
   ); /* Centrerar knappen horisontellt och placerar den delvis utanför */
   /* Centrerar knappen horisontellt */
   bottom: 0px; /* Flyttar den något under bilden */
-  width: 113px;
+  width: 116px;
+  font-weight: 600;
+  align-items: center;
 }
 
 .AddToCartButton:hover {
@@ -73,10 +75,7 @@
 @media (max-width: 400px) {
   .AddToCartButton {
     padding: 8px 20px; /* Mindre padding för mobil */
-    transform: translate(24%, 34%);
+    transform: translate(14%, 34%);
     font-size: 13px;
-  }
-  .AddToCartButton img {
-    width: 20px;
   }
 }

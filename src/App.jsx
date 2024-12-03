@@ -8,6 +8,7 @@ import data from "../data.json";
 const App = () => {
   const [cart, setCart] = useState({});
   const [isConfirmed, setIsConfirmed] = useState(false); // Hanterar popupens synlighet
+  const [resetCart, setResetCart] = useState(false);
 
   // Lägg till en produkt i varukorgen
   const handleAddToCart = (dessert, newQuantity) => {
@@ -17,6 +18,7 @@ const App = () => {
         price: dessert.price,
         name: dessert.name,
         id: dessert.id,
+        image: dessert.image,
       };
 
       return {
@@ -41,12 +43,14 @@ const App = () => {
   // Bekräfta beställning och visa popup
   const handleConfirmOrder = () => {
     setIsConfirmed(true);
+    setResetCart(true);
   };
 
   // Stäng popup och töm varukorgen
   const handleStartNewOrder = () => {
     setCart({});
     setIsConfirmed(false);
+    setResetCart(false);
   };
 
   return (
@@ -54,7 +58,12 @@ const App = () => {
       {isConfirmed && (
         <ConfirmedCheckout cart={cart} onClose={handleStartNewOrder} />
       )}
-      <DessertCard onAddToCart={handleAddToCart} cart={cart} desserts={data} />
+      <DessertCard
+        onAddToCart={handleAddToCart}
+        cart={cart}
+        desserts={data}
+        resetCart={resetCart}
+      />
       <Checkout
         cart={cart}
         removeItem={handleRemoveFromCart}

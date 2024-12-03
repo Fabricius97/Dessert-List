@@ -20,6 +20,53 @@
   text-align: start;
 }
 
+.checkoutItems {
+  background-color: hsl(20, 50%, 98%);
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  overflow-y: auto;
+  max-height: 300px;
+}
+
+/* Förbättrad scrollbar-styling för bättre användarupplevelse */
+.checkoutItems::-webkit-scrollbar {
+  width: 8px;
+}
+
+.checkoutItems::-webkit-scrollbar-thumb {
+  background: hsl(14, 86%, 42%); /* Färg på scrollhandtaget */
+  border-radius: 4px;
+}
+
+.checkoutItems::-webkit-scrollbar-thumb:hover {
+  background: hsl(14, 86%, 22%); /* Mörkare färg vid hover */
+  cursor: pointer;
+}
+
+.ConfirmedCheckoutCards {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.order {
+  display: flex;
+  gap: 20px;
+}
+
+.ConfirmedCheckoutItems {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.orderSummary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .startNewOrder {
   appearance: none;
   border: none;

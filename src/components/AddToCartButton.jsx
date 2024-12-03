@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import AddToCartImg from "../../assets/images/icon-add-to-cart.svg";
 import PlusIcon from "../../assets/images/icon-increment-quantity.svg";
 import MinusIcon from "../../assets/images/icon-decrement-quantity.svg";
@@ -6,6 +6,11 @@ import "../styles/AddToCartButton.css";
 
 const AddToCartButton = ({ dessert, onAddToCart, currentCount }) => {
   const [count, setCount] = useState(currentCount);
+
+  // Uppdatera lokala `count` när `currentCount` ändras (ex. vid återställning)
+  useEffect(() => {
+    setCount(currentCount);
+  }, [currentCount]);
 
   // Hantera inkrementering
   const handleIncrement = () => {
@@ -26,7 +31,7 @@ const AddToCartButton = ({ dessert, onAddToCart, currentCount }) => {
   return (
     <button
       className={`AddToCartButton ${count > 0 ? "active" : ""}`}
-      onClick={() => count === 0 && handleIncrement()}
+      onClick={() => count === 0 && handleIncrement()} // Lägg till första produkten
     >
       {count === 0 ? (
         <>
@@ -40,7 +45,7 @@ const AddToCartButton = ({ dessert, onAddToCart, currentCount }) => {
             alt="decrease"
             className="icon minus-icon"
             onClick={(e) => {
-              e.stopPropagation();
+              e.stopPropagation(); // Förhindra bubbla av händelsen
               handleDecrement();
             }}
           />

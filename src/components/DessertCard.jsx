@@ -2,7 +2,7 @@ import React from "react";
 import AddToCartButton from "./AddToCartButton";
 import "../styles/DessertCard.css";
 
-const DessertCard = ({ onAddToCart, cart, desserts }) => {
+const DessertCard = ({ onAddToCart, cart, desserts, resetCart }) => {
   return (
     <div>
       <h1>Desserts</h1>
@@ -31,13 +31,15 @@ const DessertCard = ({ onAddToCart, cart, desserts }) => {
                 <AddToCartButton
                   dessert={dessert}
                   onAddToCart={onAddToCart}
-                  currentCount={cart[dessert.id]?.quantity || 0} // Hämta nuvarande kvantitet
+                  currentCount={resetCart ? 0 : cart[dessert.id]?.quantity || 0} // Hämta nuvarande kvantitet
                 />
               </div>
               <div className="dessert-text">
                 <p>{dessert.category}</p>
-                <h3>{dessert.name}</h3>
-                <p>Price: ${dessert.price}</p>
+                <h4>{dessert.name}</h4>
+                <p style={{ color: "hsl(14, 86%, 42%)", fontWeight: "600" }}>
+                  ${dessert.price}
+                </p>
               </div>
             </div>
           </div>

@@ -45,8 +45,7 @@ const Checkout = ({ cart, removeItem, onConfirmOrder }) => {
           </div>
           <div className="carbonNeutral">
             <img src={CarbonNeutral} alt="carbonneutral" />
-            This is a{" "}
-            <span style={{ fontWeight: "600" }}> carbon-neutral </span>
+            This is a<span style={{ fontWeight: "600" }}> carbon-neutral </span>
             delivery.
           </div>
           <div className="confirOrderButton">
